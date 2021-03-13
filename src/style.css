@@ -14,6 +14,17 @@ h2 {
 	color: #276678;
 	font-size: 28px;
 }
+
+ul {
+	list-style-type: none;
+	text-align: left;
+	padding: 20px 20px 0;
+	margin: 0;
+}
+a {
+	color: #1687a7;
+	text-decoration: none;
+}
 .container {
 	width: 600px;
 	display: block;
@@ -29,7 +40,7 @@ h2 {
 	text-align: center;
 	font-size: 14px;
 	font-family: "Varela Round", sans-serif;
-	color: #1687a7;
+	color: grey;
 	padding: 10px;
 	margin: 0px auto;
 	width: 100%;
@@ -67,7 +78,7 @@ h2 {
 
 .currentCity {
 	font-size: 40px;
-	color: #1687a7;
+	color: #276678;
 }
 
 .forecast-container {
@@ -94,11 +105,17 @@ h2 {
 	}
 }
 
-#weather-details {
+#weather-description {
 	font-family: Arial, Helvetica, sans-serif;
 	color: grey;
 	font-size: 14px;
 }
 #instructions {
 	font-size: 16px;
+}
+
+#units {
+	position: relative;
+	font-size: 16px;
+	top: -16px;
 }
