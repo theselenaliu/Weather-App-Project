@@ -12,19 +12,17 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="src/style.css" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 		<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+		 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
-			<h1>Weather App</h1>
+			<h1>Simple Weather App</h1>
 					<form id="searchForm">
 						<div class="form-group">
-							<label for="exampleInputEmail1" id="instructions">Search for weather in your city</label>
+							<label for="exampleInputEmail1" id="instructions"></label>
 							</form>
 							<div class="row">
 								<div class="col-8">
@@ -33,70 +31,63 @@
 										class="form-control"
 										id="search"
 										aria-describedby="emailHelp"
-										placeholder="Enter city"
+										placeholder="Search for a city"
 									/>
 								</div>
-								<div class="col-4">
-									<button type="submit" class="btn btn-primary">Submit</button>
+								<div class="col-2">
+									<button type="submit" class="btn btn-primary">Search</button>
+								</div>
+								<div class="col-2">
+									<button type="submit" class="btn btn-primary" id="current-location-button"> Current Location
+                					</button>
 								</div>
 							</div>
 					<div class="row">
-						<div class="col currentCity" id="currentCity">Sydney </br>
-							☀️ <span id="temperature">25</span>
-							<span id="units">
-								<a href=" " class="temperature" id="currentCelsius">°C |</a>
-								<a href=" " class="temperature" id="currentFahreinheit">°F</a>
-							</span>
+						<div class="col currentCity" >
+							<ul>
+								<li id="currentCity"> Search for a City
+								</li>
+<li id="weather-text-description">
+									
+								</li>
+								<li> <img src="" id="icon" class="float-left" /><span id="temperature"> -- </span>
+									<span id="units">
+										<a href="_" class="temperature" id="currentCelsius">°C |</a>
+										<a href="_" class="temperature" id="currentFahreinheit">°F</a>
+									</span>
+								</li>
+
+							</ul>
 						</div>
-						<div class="col-6" id ="weather-description">
+						<div class="col-4" id ="weather-description">
 							<ul>
 								<li>
-									Last updated: <span id="currentCityTime">Sydney</span> 
+									Last updated: <span id="currentCityTime">Time</span> 
+								</li>
+
+								<li>
+									 <br/>
 								</li>
 								<li>
-									Sunny
+								Humidity: <span id="humidity">-</span> %
 								</li>
-								<li>
-									Precipitation: 0%	
-								</li>
-								<li>Wind: 5km/h
+								<li>Wind: <span id="wind">-</span> km/h
 								</li>
 							</ul>
 						</div>
 					</div>
+<h2 id="forecast-title">
 
-					<div class="forecast-container">
-						<div class="row">
-							<div class="col"><h2>5 Day Forecast</h2></div>
-							<div class="col"></div>
-						</div>
-						<div class="row">
-							<div class="col">Monday</div>
-							<div class="col">☀️ 25°C</div>
-						</div>
-						<div class="row">
-							<div class="col">Tuesday</div>
-							<div class="col">🌤 25°C</div>
-						</div>
-						<div class="row">
-							<div class="col">Wednesday</div>
-							<div class="col">🌥 25°C</div>
-						</div>
-						<div class="row">
-							<div class="col">Thursday</div>
-							<div class="col">☀️ 25°C</div>
-						</div>
-						<div class="row">
-							<div class="col">Friday</div>
-							<div class="col">☀️ 25°C</div>
-						</div>
+</h2>
+					<div class="row weather-forecast" id="forecast"></div>
+        </div>
 					</div>
 		</div>
 
 		<footer class="footer mt-auto py-3 bg-light">
-			<div class="container">
+			<div class="footer">
 				<span class="text-muted"
-					><a href="https://github.com/theselenaliu/Weather-App" target="_blank"
+					><a href="https://github.com/theselenaliu/Weather-App" target="_blank" id="footer-link"
 						>Open-sourced code</a>
 					by Selena</span>
 			</div>
