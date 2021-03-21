@@ -20,6 +20,8 @@ currentTimestamp.innerHTML = currentDateTime;
 
 //Feature #2
 
+let temperature = null;
+
 function searchResult(event) {
 	event.preventDefault();
 	let cityElement = document.querySelector("#currentCity");
@@ -31,13 +33,14 @@ function searchResult(event) {
 function showTemperature(response) {
 	console.log("temp" + response.data.main.temp);
 	document.querySelector("#currentCity").innerHTML = response.data.name;
-	let temperature = Math.round(response.data.main.temp);
+
+	temperature = Math.round(response.data.main.temp);
+
 	let weatherDescription = response.data.weather[0].description;
 	let temperatureElement = document.querySelector("#temperature");
 	let weatherDescriptionElement = document.querySelector(
 		"#weather-text-description"
 	);
-	let precipitationElement = document.querySelector("#precipitation");
 	let humidityElement = document.querySelector("#humidity");
 	let windElement = document.querySelector("#wind");
 	let iconElement = document.querySelector("#icon");
@@ -52,9 +55,6 @@ function showTemperature(response) {
 		`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 	);
 	iconElement.setAttribute("alt", response.data.weather[0].description);
-
-	let celsiusTemp = Math.round(temperature);
-	let fahrenheitTemp = Math.round((temperature * 9) / 5 + 32);
 }
 
 function dispalyForecast(response) {
@@ -124,12 +124,14 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function convertToFahrenheit(event) {
 	event.preventDefault();
 	let temperatureElement = document.querySelector("#temperature");
+	let fahrenheitTemp = Math.round((temperature * 9) / 5 + 32);
 	temperatureElement.innerHTML = fahrenheitTemp;
 }
 
 function convertToCelsius(event) {
 	event.preventDefault();
 	let temperatureElement = document.querySelector("#temperature");
+	let celsiusTemp = Math.round(temperature);
 	temperatureElement.innerHTML = celsiusTemp;
 }
 
